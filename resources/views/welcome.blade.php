@@ -25,10 +25,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <h1>HOME</h1>
         <hr/>
-        <a href="shipdb.html">Ships</a>
-        <a href="#">Sample</a>
-        <a href="#">Sample</a>
-        <a href="#">Sample</a>
+        <a href="{{ route('login') }}">Login</a>
     </div>
     <script>
         function openNav() {
