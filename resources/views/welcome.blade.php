@@ -1,95 +1,100 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/givingtnt/css1000.css') }}" media="(min-width:1450px), (max-width : 1446px)">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/givingtnt/css1446.css') }}" media="(min-width:1436px), (max-width:1446px)">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/givingtnt/css1889.css') }}" media="(min-width:1572px), (max-width:1889)">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/givingtnt/css1890.css') }}" media="(min-width:1890px)">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" >
+    <link rel="icon" href="{{ url('assets/givingtnt/icon.png') }}" sizes="any">
+    <title>linustechtips conglomerate</title>
+</head>
+<header class="header">
 
-        <title>Laravel</title>
+    <a href="index.html">
+        <img src="{{ url('assets/givingtnt/uoltt_logo_website.svg') }}" alt="logo">
+    </a>
+    <div class="title">
+        <h1>LINUSTECHTIPS CONGLOMERATE</h1>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    </div>
+    <div class="rect" >
+    </div>
+    <div id="Sidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1>HOME</h1>
+        <hr/>
+        <a href="shipdb.html">Ships</a>
+        <a href="#">Sample</a>
+        <a href="#">Sample</a>
+        <a href="#">Sample</a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("Sidenav").style.width = "250px";
+        }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+        function closeNav() {
+            document.getElementById("Sidenav").style.width = "0";
+        }
+    </script>
+    <div class="menubutton">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+        <a class="community" href="https://linustechtips.com/main/forum/77-star-citizen/" target="_blank">Community</a>
+        <hr class="headerhr">
+    </div>
+</header>
+<body>
 
-            .full-height {
-                height: 100vh;
-            }
+<div class="main">
+    <h1>Welcome, to the LTT Conglomerate website.</h1>
+    <img src="{{ url('assets/givingtnt/home_saber.jpg') }}" alt="saber img">
+    <div class="text">
+        <p>
+            This website works closely with both the <a href="https://robertsspaceindustries.com/" target="_blank">RSI website</a> as well as the <a href="http://linustechtips.com" target="_blank">Linustechtips Forum</a> , while remaining independent from both parties.
+        </p>
+        <p>
+            This website serves as a middle ground between the two and contains features that are included on both the forums as well as many that are on the RSI website. For the purpose of gathering information more readily and with less frustration, we have merged many of these features.
+        </p>
+        <p>
+            This site also serves as a reference for additional aspects of our organization, such as organizational branches, general announcements, and guidelines. The most prominent feature is the <a href="http://developers.uoltt.org/api/v3/users" target="_blank">UOLTT Conglomerate User List</a>, which displays the users currently registered within our organization. Our comprehensive list includes the ships users own, their ranks within the org, as well as all the usernames necessary for communicating through either the LTT forums or Star Citizen.
+        </p>
+        <p>
+            Whether you are a standard Star Citizen user with enjoyment in mind or a developer with lofty goals, we encourage you to join our group and achieve our primary objective: fun.
+        </p>
+        <p>
+            If you have any interest in assisting UOLTT with developmental projects, we have a public API and guidelines that we can readily provide for you.
+        </p>
+    </div>
+    <div>
+        <p>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+        </p>
+    </div>
+</div>
+<hr class="hrfoot1" noshade/>
+<hr class="hrfoot2" noshade/>
+<hr class="hrfoot1" noshade/>
+</body>
+<footer>
+    <div class="footerimg">
+        <img src="{{ url('assets/givingtnt/rndmhornet.svg') }}" alt="hornet">
+        <img src="{{ url('assets/givingtnt/rndmvanduul.svg') }}" alt="vanduul">
+    </div>
+    <div class="footertext">
+        <div>
+            The Linustechtips <a href="http://linustechtips.com" target="_blank">Forum</a>
         </div>
-    </body>
+        <div>
+            Join the <a href="http://discord.uoltt.org" target="_blank">Discord</a>
+        </div>
+        <div>
+            Website Creator  &#169; <a href="https://linustechtips.com/main/profile/85015-givingtnt/" target="_blank">givingtnt</a>  2016
+        </div>
+        <div>
+            Website Designer &#169; <a href="https://linustechtips.com/main/profile/304117-gyre-taenn/" target="_blank">Textbook</a> 2016
+        </div>
+    </div>
+</footer>
 </html>
