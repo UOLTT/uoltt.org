@@ -13,4 +13,8 @@ class Affiliation extends Model
 
     public $timestamps = false;
 
+    public function locations() {
+        return $this->hasMany(Location::class);
+    }
+
 }

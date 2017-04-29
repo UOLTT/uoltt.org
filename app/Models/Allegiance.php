@@ -13,6 +13,10 @@ class Allegiance extends Model
 
     public $timestamps = false;
 
+    public function locations() {
+        return $this->hasMany(Location::class);
+    }
+
     public function systems() {
         return $this->hasMany(System::class);
     }

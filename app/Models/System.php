@@ -17,6 +17,10 @@ class System extends Model
         return $this->belongsTo(Allegiance::class);
     }
 
+    public function locations() {
+        return $this->hasMany(Location::class);
+    }
+
     public function surveyor() {
         return $this->belongsTo(User::class);
     }
