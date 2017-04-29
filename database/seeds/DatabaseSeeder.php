@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AllegiancesTableSeeder::class);
         $this->call(AffiliationsTableSeeder::class);
         $this->call(SystemsTableSeeder::class);
+        $this->call(CelestialTypesTableSeeder::class);
     }
 }
