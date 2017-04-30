@@ -1,5 +1,7 @@
 @extends('layouts.uoltt')
 
+@section('nav-header','FAQ')
+
 @section('content')
     <h1 class="page-header">Frequently Asked Questions</h1>
 

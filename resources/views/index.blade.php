@@ -1,5 +1,7 @@
 @extends('layouts.uoltt')
 
+@section('nav-header','HOME')
+
 @section('content')
     <h1 class="page-header">Welcome, to the LTT Conglomerate website.</h1>
     <img src="{{ url('assets/givingtnt/home_saber.jpg') }}" alt="saber img">
