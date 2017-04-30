@@ -17,7 +17,7 @@
 </head>
 <header class="header">
 
-    <a href="index.html">
+    <a href="{{ route('index') }}">
         <img src="{{ url('assets/givingtnt/uoltt_logo_website.svg') }}" alt="logo">
     </a>
     <div class="title">
