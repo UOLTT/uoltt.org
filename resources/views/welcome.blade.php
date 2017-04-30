@@ -1,7 +1,7 @@
 @extends('layouts.uoltt')
 
 @section('content')
-    <h1>Welcome, to the LTT Conglomerate website.</h1>
+    <h1 class="page-header">Welcome, to the LTT Conglomerate website.</h1>
     <img src="{{ url('assets/givingtnt/home_saber.jpg') }}" alt="saber img">
     <div class="text">
         <p>
