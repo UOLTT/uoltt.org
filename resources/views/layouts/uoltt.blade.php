@@ -26,21 +26,7 @@
     </div>
     <div class="rect" >
     </div>
-    <div id="Sidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h1>HOME</h1>
-        <hr/>
-        <a href="{{ route('login') }}">Login</a>
-    </div>
-    <script>
-        function openNav() {
-            document.getElementById("Sidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("Sidenav").style.width = "0";
-        }
-    </script>
+    @include('layouts.partials.navigation')
     <div class="menubutton">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
         <a class="community" href="https://linustechtips.com/main/forum/77-star-citizen/" target="_blank">Community</a>
