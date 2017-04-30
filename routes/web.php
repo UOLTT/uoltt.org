@@ -15,5 +15,6 @@ Route::get('/', 'PageController@index')->name('index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/faq','PageController@faq')->name('faq');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/intel','PageController@intel')->name('intel');
