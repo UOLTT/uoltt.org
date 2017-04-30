@@ -3,6 +3,7 @@
     <h1>HOME</h1>
     <hr/>
     @yield('nav-links')
+    <a href="{{ route('faq') }}">F.A.Q.</a>
     <a href="{{ route('login') }}">Login</a>
 </div>
 
