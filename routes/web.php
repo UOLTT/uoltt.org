@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PageController@welcome')->name('index');
+Route::get('/', 'PageController@index')->name('index');
 
 Auth::routes();
 

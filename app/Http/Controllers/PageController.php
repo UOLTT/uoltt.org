@@ -9,8 +9,8 @@ class PageController extends Controller
         return view('faq');
     }
 
-    public function welcome() {
-        return view('welcome');
+    public function index() {
+        return view('index');
     }
 
 }
