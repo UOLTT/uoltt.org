@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" >
     <link rel="icon" href="{{ url('assets/givingtnt/icon.png') }}" sizes="any">
     <title>linustechtips conglomerate</title>
+    <style>
+        .page-header{
+            padding-top:20px;
+        }
+    </style>
 </head>
 <header class="header">
 
