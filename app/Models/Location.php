@@ -29,7 +29,7 @@ class Location extends Model
     }
 
     public function celestial_type() {
-        return $this->belongsTo(CelestialType::class,'id','celestial_type_id');
+        return $this->belongsTo(CelestialType::class,'celestial_type_id','id');
     }
 
     public function surveyor() {
