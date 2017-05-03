@@ -9,7 +9,7 @@
 
     <h1 class="page-header">Reported Locations</h1>
 
-    <table id="locationsTable" style="display: none">
+    <table id="locationsTable" style="display: none;width: 100%">
         <thead>
         <tr>
             <th>Location Name</th>
