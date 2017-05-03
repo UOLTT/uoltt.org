@@ -1,15 +1,32 @@
 @extends('layouts.uoltt')
 
 @push('styles')
-<style href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></style>
+<link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+    table.dataTable tbody tr {
+        background-color: transparent;
+    }
+    #locationsTable_filter {
+        padding-right: 50px;
+    }
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+        color: rgb(255,153,51);
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        color: rgb(255,153,51) !important;
+    }
+    #locationsTable_paginate {
+        padding-right: 50px;
+    }
+</style>
 @endpush
 
 @section('content')
 
     <h1 class="page-header">Reported Locations</h1>
 
-    <table id="locationsTable" style="display: none;width: 100%">
+    <table id="locationsTable" style="display: none;width: 80%">
         <thead>
         <tr>
             <th>Location Name</th>
