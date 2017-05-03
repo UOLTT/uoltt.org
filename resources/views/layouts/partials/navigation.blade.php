@@ -5,6 +5,7 @@
     <a href="{{ route('index') }}">Home</a>
     @yield('nav-links')
     <a href="{{ route('faq') }}">F.A.Q.</a>
+    <a href="{{ route('locations.index') }}">Locations</a>
     <a href="{{ route('login') }}">Login</a>
 </div>
 
