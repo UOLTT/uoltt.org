@@ -14,6 +14,7 @@
             padding-top:20px;
         }
     </style>
+    @stack('styles')
 </head>
 <header class="header">
 
