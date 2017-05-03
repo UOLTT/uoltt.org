@@ -9,7 +9,7 @@
 
     <h1 class="page-header">Reported Locations</h1>
 
-    <table id="locationsTable">
+    <table id="locationsTable" style="display: none">
         <thead>
         <tr>
             <th>Location Name</th>
@@ -37,7 +37,7 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
-        $('#locationsTable').DataTable();
+        $('#locationsTable').show().DataTable();
     });
 </script>
 <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
