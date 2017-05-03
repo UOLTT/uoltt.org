@@ -56,7 +56,9 @@
             Join the <a href="http://discord.uoltt.org" target="_blank">Discord</a>
         </div>
         <div>
-            Website Creator  &#169; <a href="https://linustechtips.com/main/profile/85015-givingtnt/" target="_blank">givingtnt</a>  2016
+            Website Creators  &#169;
+            <a href="https://linustechtips.com/main/profile/85015-givingtnt/" target="_blank">givingtnt</a>,
+            <a href="https://linustechtips.com/main/profile/316-judahnator/" target="_blank">judahnator</a>  2017
         </div>
         <div>
             Website Designer &#169; <a href="https://linustechtips.com/main/profile/304117-gyre-taenn/" target="_blank">Textbook</a> 2016
