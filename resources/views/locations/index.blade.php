@@ -1,5 +1,7 @@
 @extends('layouts.uoltt')
 
+@section('nav-header','Places')
+
 @push('styles')
 <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
