@@ -19,6 +19,9 @@
     #locationsTable_paginate {
         padding-right: 50px;
     }
+    .dataTables_wrapper {
+        position: static;
+    }
 </style>
 @endpush
 
