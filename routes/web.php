@@ -20,3 +20,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/intel','PageController@intel')->name('intel');
 
 Route::get('/locations','LocationController@index')->name('locations.index');
+Route::get('/locations/report','LocationController@create')
+    ->middleware('auth')
+    ->name('locations.report');
