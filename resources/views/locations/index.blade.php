@@ -4,27 +4,8 @@
 
 @push('styles')
 <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+<link type="text/css" rel="stylesheet" href="{{ url('css/datatables.css') }}">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<style>
-    table.dataTable tbody tr {
-        background-color: transparent;
-    }
-    #locationsTable_filter {
-        padding-right: 50px;
-    }
-    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-        color: rgb(255,153,51);
-    }
-    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-        color: rgb(255,153,51) !important;
-    }
-    #locationsTable_paginate {
-        padding-right: 50px;
-    }
-    .dataTables_wrapper {
-        position: static;
-    }
-</style>
 @endpush
 
 @section('content')
