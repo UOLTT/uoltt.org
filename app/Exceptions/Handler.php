@@ -47,8 +47,8 @@ class Handler extends ExceptionHandler
     {
         // If in production, make sure the user does not see the ugly "whoops" page
         if (!$this->isHttpException($exception) && !env('APP_DEBUG'))
-
             $exception = new HttpException(500,$exception->getMessage());
+
         return parent::render($request, $exception);
     }
 
