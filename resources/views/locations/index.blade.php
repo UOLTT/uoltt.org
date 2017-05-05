@@ -1,12 +1,8 @@
 @extends('layouts.uoltt')
 
-@section('nav-header','Places')
+@include('layouts.partials.datatables')
 
-@push('styles')
-<link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-<link type="text/css" rel="stylesheet" href="{{ url('css/datatables.css') }}">
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-@endpush
+@section('nav-header','Places')
 
 @section('content')
 
@@ -43,5 +39,4 @@
         $('#locationsTable').show().DataTable();
     });
 </script>
-<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 @endpush
