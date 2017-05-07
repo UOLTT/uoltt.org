@@ -1,10 +1,7 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\Models\Affiliation;
-use App\Models\Allegiance;
-use App\Models\Location;
 use Illuminate\Database\Eloquent\Model;
 
 class Shop extends Model
