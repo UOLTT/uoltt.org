@@ -3,7 +3,7 @@
     <h1>@yield('nav-header','UOLTT')</h1>
     <hr/>
     <a href="{{ route('index') }}">Home</a>
-    @yield('nav-links')
+    @stack('nav-links')
     <a href="{{ route('commodities.index') }}">Commodities</a>
     <a href="{{ route('faq') }}">F.A.Q.</a>
     <a href="{{ route('locations.index') }}">Locations</a>
