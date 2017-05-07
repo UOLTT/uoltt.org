@@ -23,7 +23,7 @@
             <tr>
                 <td>{{ $commodity->name }}</td>
                 <td>{{ $commodity->mass }}</td>
-                <td>{{ $commodity->description }}</td>
+                <td>{!! nl2br($commodity->description) !!}</td>
             </tr>
         @endforeach
         </tbody>
