@@ -5,9 +5,14 @@
     <a href="{{ route('index') }}">Home</a>
     @stack('nav-links')
     <a href="{{ route('commodities.index') }}">Commodities</a>
-    <a href="{{ route('commodities.report') }}">&nbsp;&nbsp; - Report</a>
+    @if(!\Auth::guest())
+        <a href="{{ route('commodities.report') }}">&nbsp;&nbsp; - Report</a>
+    @endif
     <a href="{{ route('faq') }}">F.A.Q.</a>
     <a href="{{ route('locations.index') }}">Locations</a>
+    @if(!\Auth::guest())
+        <a href="{{ route('locations.report') }}">&nbsp;&nbsp; - Report</a>
+    @endif
     <a href="{{ route('login') }}">Login</a>
 </div>
 
