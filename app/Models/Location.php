@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Shop;
 use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
@@ -30,6 +31,10 @@ class Location extends Model
 
     public function celestial_type() {
         return $this->belongsTo(CelestialType::class,'celestial_type_id','id');
+    }
+
+    public function shops() {
+        return $this->hasMany(Shop::class);
     }
 
     public function surveyor() {

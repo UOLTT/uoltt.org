@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Shop;
 use Illuminate\Database\Eloquent\Model;
 
 class Allegiance extends Model
@@ -15,6 +16,10 @@ class Allegiance extends Model
 
     public function locations() {
         return $this->hasMany(Location::class);
+    }
+
+    public function shops() {
+        return $this->hasMany(Shop::class);
     }
 
     public function systems() {
