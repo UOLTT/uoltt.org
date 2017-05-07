@@ -14,6 +14,7 @@
         <a href="{{ route('locations.report') }}">&nbsp;&nbsp; - Report</a>
     @endif
     <a href="{{ route('login') }}">Login</a>
+    <a href="{{ route('shops.index') }}">Shops</a>
 </div>
 
 @push('scripts')
