@@ -34,3 +34,5 @@ Route::post('/locations','LocationController@store')
 Route::get('/locations/report','LocationController@create')
     ->middleware('auth')
     ->name('locations.report');
+
+Route::get('/shops','ShopsController@index')->name('shops.index');
