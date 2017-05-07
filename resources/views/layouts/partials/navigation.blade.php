@@ -3,10 +3,16 @@
     <h1>@yield('nav-header','UOLTT')</h1>
     <hr/>
     <a href="{{ route('index') }}">Home</a>
-    @yield('nav-links')
+    @stack('nav-links')
     <a href="{{ route('commodities.index') }}">Commodities</a>
+    @if(!\Auth::guest())
+        <a href="{{ route('commodities.report') }}">&nbsp;&nbsp; - Report</a>
+    @endif
     <a href="{{ route('faq') }}">F.A.Q.</a>
     <a href="{{ route('locations.index') }}">Locations</a>
+    @if(!\Auth::guest())
+        <a href="{{ route('locations.report') }}">&nbsp;&nbsp; - Report</a>
+    @endif
     <a href="{{ route('login') }}">Login</a>
 </div>
 
