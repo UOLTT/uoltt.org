@@ -36,3 +36,6 @@ Route::get('/locations/report','LocationController@create')
     ->name('locations.report');
 
 Route::get('/shops','ShopsController@index')->name('shops.index');
+Route::get('/shops/report','ShopsController@create')
+    ->middleware('auth')
+    ->name('shops.report');
