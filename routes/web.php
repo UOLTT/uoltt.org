@@ -25,6 +25,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/intel','PageController@intel')->name('intel');
 
 Route::get('/locations','LocationController@index')->name('locations.index');
+Route::post('/locations','LocationController@store')
+    ->middleware('auth')
+    ->name('locations.store');
 Route::get('/locations/report','LocationController@create')
     ->middleware('auth')
     ->name('locations.report');
