@@ -16,6 +16,9 @@ Route::get('/', 'PageController@index')->name('index');
 Auth::routes();
 
 Route::get('/commodities','CommoditiesController@index')->name('commodities.index');
+Route::post('/commodities','CommoditiesController@store')
+    ->middleware('auth')
+    ->name('commodities.store');
 Route::get('/commodities/report','CommoditiesController@create')
     ->middleware('auth')
     ->name('commodities.report');
