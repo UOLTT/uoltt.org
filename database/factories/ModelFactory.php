@@ -43,3 +43,14 @@ $factory->define(\App\Models\Shop::class,function(Faker\Generator $faker) {
         'affiliation_id' => \App\Models\Affiliation::inRandomOrder()->first(['id'])->id
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(\App\Models\Bid::class,function(Faker\Generator $faker) {
+    return [
+        'commodity_id' => \App\Models\Commodity::inRandomOrder()->first()->id,
+        'shop_id' => \App\Models\Shop::inRandomOrder()->first()->id,
+        'reported_by' => \App\Models\User::inRandomOrder()->first()->id,
+        'price' => $faker->randomFloat(2,0,1000),
+        'quantity' => $faker->randomNumber()
+    ];
+});
