@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Shop;
 use Illuminate\Database\Eloquent\Model;
 
 class Allegiance extends Model
