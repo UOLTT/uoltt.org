@@ -20,7 +20,7 @@ class Bid extends Model
     public $timestamps = true;
 
     public function reporter() {
-        return $this->belongsTo(User::class,'id','reported_by');
+        return $this->belongsTo(User::class,'reported_by','id');
     }
 
 }
