@@ -22,3 +22,7 @@ Route::get('status',function() {
         'status' => 'ok'
     ]);
 });
+
+Route::group(['namespace'=>'API'],function() {
+    Route::get('/bids','BidsController@index');
+});
