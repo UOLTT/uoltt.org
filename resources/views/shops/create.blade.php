@@ -20,6 +20,8 @@
         width: 75%;
     }
 </style>
+<script src="{{ url('js/sweetalert.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url('css/sweetalert.css') }}">
 @endpush
 
 @section('content')
@@ -91,6 +93,12 @@
                 </select>
             </td>
         </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button style="width:100%" type="button" id="submitButton">Submit Shop</button>
+            </td>
+        </tr>
         </tbody>
 
     </table>
@@ -115,8 +123,43 @@
         $('#location').html("");
 
         $.each(Locations,function(index,Location) {
-            $('#location').append('<option id="' + Location['id'] + '">' + Location['name'] + '</option>');
+            $('#location').append('<option value="' + Location['id'] + '">' + Location['name'] + '</option>');
         })
+
+    });
+
+    // When the submit button is pressed
+    $("#submitButton").on('click',function() {
+
+        // Submit the data to the correct route
+        $.post('{{ route('shops.store') }}',{
+            _token: '{{ csrf_token() }}',
+            location_id: $('#location').val(),
+            affiliation_id: $('#affiliation').val(),
+            allegiance_id: $('#allegiance').val(),
+            name: $('#name').val()
+        })
+            // When the request finishes successfully
+            .done(function(Response) {
+                // Notify user of success
+                swal({
+                    title: "Shop Submitted",
+                    text: "The shop \"" + Response['name'] + "\" has been added to the database, an administrator will be notified to ensure data integrity shortly.",
+                    type: "success"
+                }, function () {
+                    // Redirect back to the locations index page
+                    window.location.replace('{{ route('shops.index') }}')
+                });
+            })
+            // If the request fails
+            .fail(function() {
+                // Display an error message
+                swal(
+                    "Oops...",
+                    "It looks like there may have been an issue with your input, double check it and try again?",
+                    "error"
+                );
+            });
 
     });
 

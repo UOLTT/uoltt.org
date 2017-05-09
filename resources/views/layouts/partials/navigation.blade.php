@@ -15,6 +15,9 @@
     @endif
     <a href="{{ route('login') }}">Login</a>
     <a href="{{ route('shops.index') }}">Shops</a>
+    @if(!\Auth::guest())
+        <a href="{{ route('shops.report') }}">&nbsp;&nbsp; - Report</a>
+    @endif
 </div>
 
 @push('scripts')
