@@ -14,15 +14,17 @@
         <tr>
             <th>Name</th>
             <th>Mass</th>
+            <th>Average Price</th>
             <th>Description</th>
         </tr>
         </thead>
 
         <tbody>
-        @foreach(\App\Models\Commodity::orderBy('name')->get(['name','description','mass']) as $commodity)
+        @foreach(\App\Models\Commodity::with('bids')->orderBy('name')->get(['id','name','description','mass']) as $commodity)
             <tr>
                 <td>{{ $commodity->name }}</td>
                 <td>{{ $commodity->mass }}</td>
+                <td>{{ money_format('%.2n',$commodity->bids->average('price')) }}</td>
                 <td>{!! nl2br($commodity->description) !!}</td>
             </tr>
         @endforeach

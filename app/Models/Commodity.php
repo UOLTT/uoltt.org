@@ -17,4 +17,8 @@ class Commodity extends Model
 
     public $timestamps = false;
 
+    public function bids() {
+        return $this->hasMany(Bid::class);
+    }
+
 }
