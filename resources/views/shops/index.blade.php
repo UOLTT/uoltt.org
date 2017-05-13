@@ -1,4 +1,4 @@
-@extends('layouts.uoltt')
+@extends('layouts.uoltt-bootstrap')
 
 @include('layouts.partials.datatables')
 
@@ -6,9 +6,9 @@
 
 @section('content')
 
-    <h1 class="page-header">Shops List</h1>
+    <h1>Shops List</h1>
 
-    <table id="ShopsTable" style="display:none;">
+    <table id="ShopsTable" style="display:none; width:80%;">
 
         <thead>
         <tr>
