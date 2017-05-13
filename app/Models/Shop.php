@@ -30,4 +30,8 @@ class Shop extends Model
         return $this->belongsTo(Location::class);
     }
 
+    public function bids() {
+        return $this->hasMany(Bid::class);
+    }
+
 }
