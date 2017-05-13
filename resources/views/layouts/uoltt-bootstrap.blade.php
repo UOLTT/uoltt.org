@@ -70,6 +70,10 @@
                 padding-left: 60px;
                 padding-right: 60px;
             }
+            .list-group-item {
+                 background-color: rgb(34, 36, 33);
+                 border: none;
+            }
         </style>
 
         @stack('styles')
