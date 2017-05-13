@@ -17,10 +17,10 @@ Auth::routes();
 
 Route::get('/commodities','CommoditiesController@index')->name('commodities.index');
 Route::post('/commodities','CommoditiesController@store')
-    ->middleware('auth')
+    ->middleware('permission:create_reports')
     ->name('commodities.store');
 Route::get('/commodities/report','CommoditiesController@create')
-    ->middleware('auth')
+    ->middleware('permission:create_reports')
     ->name('commodities.report');
 
 Route::get('/faq','PageController@faq')->name('faq');
@@ -29,18 +29,18 @@ Route::get('/intel','PageController@intel')->name('intel');
 
 Route::get('/locations','LocationController@index')->name('locations.index');
 Route::post('/locations','LocationController@store')
-    ->middleware('auth')
+    ->middleware('permission:create_reports')
     ->name('locations.store');
 Route::get('/locations/report','LocationController@create')
-    ->middleware('auth')
+    ->middleware('permission:create_reports')
     ->name('locations.report');
 
 Route::get('/shops','ShopsController@index')->name('shops.index');
 Route::post('/shops','ShopsController@store')
     ->name('shops.store')
-    ->middleware('auth');
+    ->middleware('permission:create_reports');
 Route::get('/shops/report','ShopsController@create')
-    ->middleware('auth')
+    ->middleware('permission:create_reports')
     ->name('shops.report');
 Route::get('/shops/{shop}','ShopsController@show')
     ->name('shops.show');
