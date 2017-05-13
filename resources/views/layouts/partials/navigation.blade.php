@@ -48,19 +48,19 @@
     <a href="{{ route('index') }}">Home</a>
     @stack('nav-links')
     <a href="{{ route('commodities.index') }}">Commodities</a>
-    @if(!\Auth::guest())
+    @permission('create_reports')
         <a href="{{ route('commodities.report') }}">&nbsp;&nbsp; - Report</a>
-    @endif
+    @endpermission
     <a href="{{ route('faq') }}">F.A.Q.</a>
     <a href="{{ route('locations.index') }}">Locations</a>
-    @if(!\Auth::guest())
+    @permission('create_reports')
         <a href="{{ route('locations.report') }}">&nbsp;&nbsp; - Report</a>
-    @endif
+    @endpermission
     <a href="{{ route('login') }}">Login</a>
     <a href="{{ route('shops.index') }}">Shops</a>
-    @if(!\Auth::guest())
+    @permission('create_reports')
         <a href="{{ route('shops.report') }}">&nbsp;&nbsp; - Report</a>
-    @endif
+    @endpermission
 </div>
 @endsection
 
