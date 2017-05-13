@@ -54,7 +54,7 @@
                 top: 150px;
                 right: 780px;
             }
-            p, h1 {
+            p, h1, label {
                 color: rgb(255,153,51);
             }
             .footerimgcontainer {
