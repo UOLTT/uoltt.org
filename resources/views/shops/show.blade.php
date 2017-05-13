@@ -41,6 +41,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Quantity</th>
+                    <th>Mass (in SCU)</th>
                     <th>Price</th>
                     <th>Report Age</th>
                 </tr>
@@ -51,6 +52,7 @@
                     <tr>
                         <td>{{ $bid->commodity->name }}</td>
                         <td>{{ $bid->quantity }}</td>
+                        <th>{{ $bid->commodity->mass }}</th>
                         <td>{{ $bid->price }}</td>
                         <td>{{ $bid->created_at->diffForHumans(\Carbon\Carbon::now(),true) }}</td>
                     </tr>
