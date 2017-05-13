@@ -23,7 +23,7 @@
         <tbody>
         @foreach(\App\Models\Shop::with('location.system','location.celestial_type','affiliation','allegiance')->orderBy('name')->get() as $Shop)
             <tr>
-                <td>{{ $Shop->name }}</td>
+                <td><a href="{{ route('shops.show',$Shop->id) }}">{{ $Shop->name }}</a></td>
                 <td>{{ $Shop->location->system->name }}</td>
                 <td>{{ $Shop->location->name }} ({{ $Shop->location->celestial_type->name }})</td>
                 <td>{{ $Shop->affiliation->name }}</td>
