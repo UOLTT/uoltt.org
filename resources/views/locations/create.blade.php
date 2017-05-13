@@ -1,106 +1,110 @@
 @extends('layouts.uoltt')
 
 @push('styles')
-<style>
-    input {
-        width: 99%;
-    }
-
-    select, input {
-        border-radius: 2px;
-    }
-
-    select {
-        width: 100%;
-    }
-
-    table {
-        width: 75%;
-    }
-</style>
 <script src="{{ url('js/sweetalert.min.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ url('css/sweetalert.css') }}">
+<style>
+    .row {
+        padding-bottom:10px;
+    }
+</style>
 @endpush
 
 @section('content')
 
-    <h1 class="page-header">Report a new location</h1>
+    <h1>Report a new location</h1>
 
-    <table>
+    <div class="row">
+        <div class="col-md-7 col-md-offset-1">
 
-        <thead>
-        <tr>
-            <th>Option Name</th>
-            <th>Option Value</th>
-        </tr>
-        </thead>
+            <div class="row">
 
-        <tbody>
+                <div class="col-md-4">
+                    <label for="name">Location Name</label>
+                </div>
 
-        <tr>
-            <td><label for="name">Location Name</label></td>
-            <td>
-                <input type="text" name="name" id="name">
-            </td>
-        </tr>
-        <tr>
-            <td><label for="system">System</label></td>
-            <td>
-                <select id="system" name="system_id">
-                    <option selected disabled>Select...</option>
-                    @foreach(\App\Models\System::orderBy('name')->get(['id','name']) as $system)
-                        <option value="{{ $system->id }}">{{ $system->name }}</option>
-                    @endforeach
-                </select>
-            </td>
-        </tr>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" name="name" id="name">
+                </div>
 
-        <tr>
-            <td><label for="type">Celestial Body Type</label></td>
-            <td>
-                <select id="type" name="celestial_type_id">
-                    <option selected disabled>Select...</option>
-                    @foreach(\App\Models\CelestialType::orderBy('name')->get(['id','name']) as $type)
-                        <option value="{{ $type->id }}">{{ $type->name }}</option>
-                    @endforeach
-                </select>
-            </td>
-        </tr>
+            </div>
 
-        <tr>
-            <td><label for="allegiance">Allegiance</label></td>
-            <td>
-                <select id="allegiance" name="allegiance_id">
-                    <option selected disabled>Select...</option>
-                    @foreach(\App\Models\Allegiance::orderBy('name')->get(['id','name']) as $allegiance)
-                        <option value="{{ $allegiance->id }}">{{ $allegiance->name }}</option>
-                    @endforeach
-                </select>
-            </td>
-        </tr>
+            <div class="row">
 
-        <tr>
-            <td><label for="affiliation">Affiliation</label></td>
-            <td>
-                <select id="affiliation" name="affiliation_id">
-                    <option selected disabled>Select...</option>
-                    @foreach(\App\Models\Affiliation::orderBy('name')->get(['id','name']) as $affiliation)
-                        <option value="{{ $affiliation->id }}">{{ $affiliation->name }}</option>
-                    @endforeach
-                </select>
-            </td>
-        </tr>
+                <div class="col-md-4">
+                    <label for="system">System</label>
+                </div>
 
-        <tr>
-            <td></td>
-            <td>
-                <button style="width:100%" type="button" class="submit-button">Submit Location</button>
-            </td>
-        </tr>
+                <div class="col-md-8">
+                    <select class="form-control" id="system" name="system_id">
+                        <option selected disabled>Select...</option>
+                        @foreach(\App\Models\System::orderBy('name')->get(['id','name']) as $system)
+                            <option value="{{ $system->id }}">{{ $system->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
 
-        </tbody>
+            </div>
 
-    </table>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="type">Celestial Body Type</label>
+                </div>
+
+                <div class="col-md-8">
+                    <select class="form-control" id="type" name="celestial_type_id">
+                        <option selected disabled>Select...</option>
+                        @foreach(\App\Models\CelestialType::orderBy('name')->get(['id','name']) as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="allegiance">Allegiance</label>
+                </div>
+
+                <div class="col-md-8">
+                    <select class="form-control" id="allegiance" name="allegiance_id">
+                        <option selected disabled>Select...</option>
+                        @foreach(\App\Models\Allegiance::orderBy('name')->get(['id','name']) as $allegiance)
+                            <option value="{{ $allegiance->id }}">{{ $allegiance->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="affiliation">Affiliation</label>
+                </div>
+
+                <div class="col-md-8">
+                    <select class="form-control" id="affiliation" name="affiliation_id">
+                        <option selected disabled>Select...</option>
+                        @foreach(\App\Models\Affiliation::orderBy('name')->get(['id','name']) as $affiliation)
+                            <option value="{{ $affiliation->id }}">{{ $affiliation->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-4">
+                    <button type="button" class="btn btn-block btn-primary">Submit Location</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 @endsection
 
@@ -108,7 +112,7 @@
 <script>
 
     // When the submit button is pressed
-    $('.submit-button').on('click', function () {
+    $('button').on('click', function () {
 
         // Submit the data to the correct route
         $.post('{{ route('locations.store') }}', {

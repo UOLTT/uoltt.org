@@ -8,7 +8,7 @@
 
     <h1 class="page-header">Commodities</h1>
 
-    <table id="commoditiesTable" style="display: none;width: 80%">
+    <table class="table-striped" id="commoditiesTable" style="display: none;width: 80%">
 
         <thead>
         <tr>

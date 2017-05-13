@@ -3,74 +3,68 @@
 @section('nav-header','Report')
 
 @push('styles')
-<style>
-    input, textarea {
-        width: 99%;
-    }
-
-    select, input {
-        border-radius: 2px;
-    }
-
-    select {
-        width: 100%;
-    }
-
-    table {
-        width: 75%;
-    }
-</style>
 <script src="{{ url('js/sweetalert.min.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ url('css/sweetalert.css') }}">
+<style>
+    .row {
+        padding-bottom:10px;
+    }
+</style>
 @endpush
 
 @section('content')
 
-    <h1 class="page-header">Report Commodity</h1>
+    <h1>Report Commodity</h1>
 
-    <table>
+    <div class="row">
+        <div class="col-md-7 col-md-offset-1">
 
-        <thead>
-        <tr>
-            <th>Option Name</th>
-            <th>Option Value</th>
-        </tr>
-        </thead>
+            <div class="row">
 
-        <tbody>
-        <tr>
-            <td>
-                <label for="name">Name</label>
-            </td>
-            <td>
-                <input type="text" id="name" name="name">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="description">Description</label>
-            </td>
-            <td>
-                <textarea name="description" id="description"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="mass">Mass</label>
-            </td>
-            <td>
-                <input type="number" step="1" min="0" id="mass">
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <button style="width:100%" type="button" id="submit">Report</button>
-            </td>
-        </tr>
-        </tbody>
+                <div class="col-md-6">
+                    <label for="name">Name</label>
+                </div>
 
-    </table>
+                <div class="col-md-6">
+                    <input class="form-control" type="text" id="name" name="name">
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="description">Description</label>
+                </div>
+
+                <div class="col-md-6">
+                    <textarea class="form-control" name="description" id="description"></textarea>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label for="mass">Mass</label>
+                </div>
+
+                <div class="col-md-6">
+                    <input class="form-control" type="number" step="1" min="0" id="mass">
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 col-md-offset-6">
+                    <button class="btn btn-primary btn-block" type="button" id="submit">Report</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 @endsection
 

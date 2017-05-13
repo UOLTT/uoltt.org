@@ -4,20 +4,8 @@
 
 @push('styles')
 <style>
-    input {
-        width: 99%;
-    }
-
-    select, input {
-        border-radius: 2px;
-    }
-
-    select {
-        width: 100%;
-    }
-
-    table {
-        width: 75%;
+    .row {
+        padding-bottom:10px;
     }
 </style>
 <script src="{{ url('js/sweetalert.min.js') }}"></script>
@@ -26,82 +14,107 @@
 
 @section('content')
 
-    <h1 class="page-header">Report A New Shop Location</h1>
+    <h1>Report A New Shop Location</h1>
 
-    <table>
+    <div class="row">
 
-        <thead>
-        <tr>
-            <th>Option Name</th>
-            <th>Option Value</th>
-        </tr>
-        </thead>
+        <div class="col-md-4">
 
-        <tbody>
-        <tr>
-            <td>
-                <label for="name">Name</label>
-            </td>
-            <td>
-                <input type="text" id="name" name="name">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="system">System</label>
-            </td>
-            <td>
-                <select id="system" name="system">
-                    <option selected disabled></option>
-                    @foreach($Systems->sortBy('name') as $system)
-                        <option value="{{ $system->id }}">{{ $system->name }}</option>
-                    @endforeach
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="location">Location</label>
-            </td>
-            <td>
-                <select id="location" name="location"></select>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="affiliation">Affiliation</label>
-            </td>
-            <td>
-                <select id="affiliation" name="affiliation">
-                    <option selected disabled></option>
-                    @foreach(\App\Models\Affiliation::orderBy('name')->get(['id','name']) as $Affiliation)
-                        <option value="{{ $Affiliation->id }}">{{ $Affiliation->name }}</option>
-                    @endforeach
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="allegiance">Allegiance</label>
-            </td>
-            <td>
-                <select id="allegiance" name="allegiance">
-                    <option selected disabled></option>
-                    @foreach(\App\Models\Allegiance::orderBy('name')->get(['id','name']) as $Allegiance)
-                        <option value="{{ $Allegiance->id }}">{{ $Allegiance->name }}</option>
-                    @endforeach
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <button style="width:100%" type="button" id="submitButton">Submit Shop</button>
-            </td>
-        </tr>
-        </tbody>
+        </div>
 
-    </table>
+        <div class="col-md-8">
+
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-1">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="name">Name</label>
+                </div>
+
+                <div class="col-md-8">
+                    <input class="form-control" type="text" id="name" name="name">
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="system">System</label>
+                </div>
+
+                <div class="col-md-8">
+                    <select class="form-control" id="system" name="system">
+                        <option selected disabled></option>
+                        @foreach($Systems->sortBy('name') as $system)
+                            <option value="{{ $system->id }}">{{ $system->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="location">Location</label>
+                </div>
+
+                <div class="col-md-8">
+                    <select class="form-control" id="location" name="location"></select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="affiliation">Affiliation</label>
+                </div>
+
+                <div class="col-md-8">
+                    <select class="form-control" id="affiliation" name="affiliation">
+                        <option selected disabled></option>
+                        @foreach(\App\Models\Affiliation::orderBy('name')->get(['id','name']) as $Affiliation)
+                            <option value="{{ $Affiliation->id }}">{{ $Affiliation->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="allegiance">Allegiance</label>
+                </div>
+
+                <div class="col-md-8">
+                    <select class="form-control" id="allegiance" name="allegiance">
+                        <option selected disabled></option>
+                        @foreach(\App\Models\Allegiance::orderBy('name')->get(['id','name']) as $Allegiance)
+                            <option value="{{ $Allegiance->id }}">{{ $Allegiance->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-4">
+                    <button class="btn btn-block btn-primary" type="button" id="submitButton">Submit Shop</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 @endsection
 

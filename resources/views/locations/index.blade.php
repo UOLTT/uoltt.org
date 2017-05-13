@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <h1 class="page-header">Reported Locations</h1>
+    <h1>Reported Locations</h1>
 
     <table id="locationsTable" style="display: none;width: 80%">
         <thead>
