@@ -1,4 +1,4 @@
-@extends('layouts.uoltt-bootstrap')
+@extends('layouts.uoltt')
 
 @section('nav-header','SHOP')
 

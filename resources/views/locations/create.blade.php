@@ -1,4 +1,4 @@
-@extends('layouts.uoltt-bootstrap')
+@extends('layouts.uoltt')
 
 @push('styles')
 <script src="{{ url('js/sweetalert.min.js') }}"></script>
