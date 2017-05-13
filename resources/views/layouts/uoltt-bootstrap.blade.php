@@ -50,10 +50,9 @@
             }
             .menubutton {
                 color: rgb(255,153,51);
-                position: fixed;
-                top: 210px;
-                padding-left: 1.9%;
-                max-width: 89.5%;
+                position: relative;
+                top: 150px;
+                right: 780px;
             }
             p, h1 {
                 color: rgb(255,153,51);

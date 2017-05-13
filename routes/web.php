@@ -13,6 +13,10 @@
 
 Route::get('/', 'PageController@index')->name('index');
 
+Route::get('bootstrap',function() {
+    return view('layouts.uoltt-bootstrap');
+});
+
 Auth::routes();
 
 Route::get('/commodities','CommoditiesController@index')->name('commodities.index');
