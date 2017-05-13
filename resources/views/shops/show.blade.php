@@ -41,7 +41,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Quantity</th>
-                    <th>Mass (in SCU)</th>
+                    <th>Mass (per scu)</th>
                     <th>Price</th>
                     <th>Report Age</th>
                 </tr>
