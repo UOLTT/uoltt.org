@@ -23,7 +23,7 @@ return array(
     |
     */
 
-    'include_fluent' => false,
+    'include_fluent' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return array(
     */
 
     'model_locations' => array(
-        'app',
+        'app/Models',
     ),
 
 
