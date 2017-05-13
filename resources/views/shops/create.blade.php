@@ -161,7 +161,7 @@
                     type: "success"
                 }, function () {
                     // Redirect back to the locations index page
-                    window.location.replace('{{ route('shops.index') }}')
+                    window.location.replace('{{ route('shops.show',null) }}/' + Response['id']);
                 });
             })
             // If the request fails
