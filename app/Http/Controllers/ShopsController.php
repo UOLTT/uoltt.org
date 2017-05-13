@@ -19,6 +19,10 @@ class ShopsController extends Controller
         ]);
     }
 
+    public function show(Shop $shop) {
+        return view('shops.show',['shop'=>$shop->load('bids.commodity')]);
+    }
+
     public function store(Request $request) {
 
         $this->validate($request,[
