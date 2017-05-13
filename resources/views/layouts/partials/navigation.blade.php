@@ -1,7 +1,6 @@
 <div id="Sidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <h1>@yield('nav-header','UOLTT')</h1>
-    <hr/>
     <a href="{{ route('index') }}">Home</a>
     @stack('nav-links')
     <a href="{{ route('commodities.index') }}">Commodities</a>
