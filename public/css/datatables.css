@@ -21,3 +21,7 @@ td,th {
 .dataTables_info {
      color: rgb(255,153,51) !important;
 }
+
+#commoditiesTable_filter, #commoditiesTable_paginate {
+     padding-right: 20px;
+}
