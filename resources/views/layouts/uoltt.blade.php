@@ -9,6 +9,9 @@
               integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <style>
+            .alert {
+                border-radius: 0;
+            }
             body {
                 background-color: #2E302D
             }
@@ -74,6 +77,11 @@
                  background-color: rgb(34, 36, 33);
                  border: none;
             }
+            .notices {
+                position: fixed;
+                z-index: 1;
+                width: 100%;
+            }
         </style>
 
         @stack('styles')
@@ -83,6 +91,14 @@
     <body>
 
         <div class="container-fluid">
+
+            @if(\Session::has('message'))
+                <div class="row notices">
+                    <div class="alert alert-success" role="alert">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                    </div>
+                </div>
+            @endif
 
             <div class="row">
                 <div class="col-md-11 col-md-offset-1" id="container">
