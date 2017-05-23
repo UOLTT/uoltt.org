@@ -135,8 +135,8 @@
 
                     <!-- the footer -->
                     <div class="footerimgcontainer">
-                        <img class="footerimg" src="http://uoltt.local/assets/givingtnt/rndmhornet.svg" alt="hornet">
-                        <img class="footerimg" src="http://uoltt.local/assets/givingtnt/rndmvanduul.svg" alt="vanduul">
+                        <img class="footerimg" src="{{ url('assets/givingtnt/rndmhornet.svg') }}" alt="hornet">
+                        <img class="footerimg" src="{{ url('assets/givingtnt/rndmvanduul.svg') }}" alt="vanduul">
                     </div>
 
                 </div>
