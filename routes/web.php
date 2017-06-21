@@ -32,7 +32,6 @@ Route::get('/commodities/report','CommoditiesController@create')
     ->name('commodities.report');
 
 Route::get('/faq','PageController@faq')->name('faq');
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/intel','PageController@intel')->name('intel');
 
 Route::get('/locations','LocationController@index')->name('locations.index');
