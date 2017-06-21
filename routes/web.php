@@ -15,6 +15,8 @@ Route::get('/', 'PageController@index')->name('index');
 
 Auth::routes();
 
+Route::get('/bids','BidController@index')->name('bids.index');
+
 Route::get('/commodities','CommoditiesController@index')->name('commodities.index');
 Route::post('/commodities','CommoditiesController@store')
     ->middleware('permission:create_reports')
