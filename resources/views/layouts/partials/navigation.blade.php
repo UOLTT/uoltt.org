@@ -56,7 +56,9 @@
     @permission('create_reports')
         <a href="{{ route('locations.report') }}">&nbsp;&nbsp; - Report</a>
     @endpermission
-    <a href="{{ route('login') }}">Login</a>
+    @if(\Auth::guest())
+        <a href="{{ route('login') }}">Login</a>
+    @endif
     <a href="{{ route('shops.index') }}">Shops</a>
     @permission('create_reports')
         <a href="{{ route('shops.report') }}">&nbsp;&nbsp; - Report</a>
