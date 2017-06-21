@@ -16,6 +16,12 @@ Route::get('/', 'PageController@index')->name('index');
 Auth::routes();
 
 Route::get('/bids','BidController@index')->name('bids.index');
+Route::post('/bids','BidController@store')
+    ->middleware('permission:create_reports')
+    ->name('bids.store');
+Route::get('/bids/report','BidController@create')
+    ->middleware('permission:create_reports')
+    ->name('bids.report');
 
 Route::get('/commodities','CommoditiesController@index')->name('commodities.index');
 Route::post('/commodities','CommoditiesController@store')
