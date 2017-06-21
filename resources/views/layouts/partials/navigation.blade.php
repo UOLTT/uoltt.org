@@ -58,6 +58,12 @@
     @endpermission
     @if(\Auth::guest())
         <a href="{{ route('login') }}">Login</a>
+    @else
+        <a href="{{ route('profile.view') }}">Profile</a>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+        @push('scripts')
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+        @endpush
     @endif
     <a href="{{ route('bids.index') }}">Market Activity</a>
     @permission('create_reports')

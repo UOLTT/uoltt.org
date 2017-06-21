@@ -43,6 +43,13 @@ Route::get('/locations/report','LocationController@create')
     ->middleware('permission:create_reports')
     ->name('locations.report');
 
+Route::post('/profile','ProfileController@update')
+    ->middleware('auth')
+    ->name('profile.update');
+Route::get('/profile','ProfileController@view')
+    ->middleware('auth')
+    ->name('profile.view');
+
 Route::get('/shops','ShopsController@index')->name('shops.index');
 Route::post('/shops','ShopsController@store')
     ->name('shops.store')
