@@ -59,6 +59,10 @@
     @if(\Auth::guest())
         <a href="{{ route('login') }}">Login</a>
     @endif
+    <a href="{{ route('bids.index') }}">Market Activity</a>
+    @permission('create_reports')
+        <a href="{{ route('bids.report') }}">&nbsp;&nbsp; - Report</a>
+    @endpermission
     <a href="{{ route('shops.index') }}">Shops</a>
     @permission('create_reports')
         <a href="{{ route('shops.report') }}">&nbsp;&nbsp; - Report</a>
