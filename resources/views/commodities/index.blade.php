@@ -22,7 +22,9 @@
         <tbody>
         @foreach(\App\Models\Commodity::with('bids')->orderBy('name')->get(['id','name','description','mass']) as $commodity)
             <tr>
-                <td>{{ $commodity->name }}</td>
+                <td>
+                    <a href="{{ route('commodities.show', $commodity->id) }}">{{ $commodity->name }}</a>
+                </td>
                 <td>{{ $commodity->mass }}</td>
                 <td>{{ money_format('%.2n',$commodity->bids->average('price')) }}</td>
                 <td>{!! nl2br($commodity->description) !!}</td>

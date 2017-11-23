@@ -16,6 +16,10 @@ class CommoditiesController extends Controller
         return view('commodities.index');
     }
 
+    public function show(Commodity $commodity) {
+        return view('commodities.show')->with('commodity', $commodity->load('bids.shop'));
+    }
+
     public function store(Request $request) {
 
         $this->validate($request,[

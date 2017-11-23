@@ -30,6 +30,7 @@ Route::post('/commodities','CommoditiesController@store')
 Route::get('/commodities/report','CommoditiesController@create')
     ->middleware('permission:create_reports')
     ->name('commodities.report');
+Route::get('/commodities/{commodity}', 'CommoditiesController@show')->name('commodities.show');
 
 Route::get('/faq','PageController@faq')->name('faq');
 Route::get('/intel','PageController@intel')->name('intel');
