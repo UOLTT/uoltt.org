@@ -32,7 +32,7 @@
                     <tr>
                         <th><label for="password">Password</label></th>
                         <td>
-                            <input type="password" class="form-control" id="password" data-toggle="tooltip" title="Leave blank to keep current password">
+                            <input name="password" type="password" class="form-control" id="password" data-toggle="tooltip" title="Leave blank to keep current password">
                             @push('scripts')
                             <script>
                                 $(document).ready(function() {
