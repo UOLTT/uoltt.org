@@ -59,3 +59,19 @@ Route::get('/shops/report','ShopsController@create')
     ->name('shops.report');
 Route::get('/shops/{shop}','ShopsController@show')
     ->name('shops.show');
+
+Route::group(['prefix' => '/admin', 'as' => 'admin.', 'namespace' => 'Admin'], function() {
+    Route::group(['prefix' => '/moderation', 'as' => 'moderation.', 'namespace' => 'Moderation'], function() {
+
+        Route::resource(
+            '/bids',
+            'BidsController', [
+                'only' => [
+                    'index',
+                    'destroy',
+                    'update'
+                ]
+            ]);
+
+    });
+});

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Bid extends Model
@@ -16,12 +17,27 @@ class Bid extends Model
         'shop_id',
         'reported_by',
         'price',
-        'quantity'
+        'quantity',
+        'requires_moderation'
     ];
 
     protected $table = 'bids';
 
     public $timestamps = true;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('moderated', function(Builder $query) {
+            return $query->where('requires_moderation', false);
+        });
+    }
+
+    public function scopeRequiresModeration(Builder $query) {
+        return $query->withoutGlobalScope('moderated')
+            ->where('requires_moderation', true);
+    }
 
     public function commodity() {
         return $this->belongsTo(Commodity::class);

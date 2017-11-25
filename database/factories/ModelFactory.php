@@ -51,6 +51,7 @@ $factory->define(\App\Models\Bid::class,function(Faker\Generator $faker) {
         'shop_id' => \App\Models\Shop::inRandomOrder()->first()->id,
         'reported_by' => \App\Models\User::inRandomOrder()->first()->id,
         'price' => $faker->randomFloat(2,0,1000),
-        'quantity' => $faker->randomNumber()
+        'quantity' => $faker->randomNumber(),
+        'requires_moderation' => $faker->boolean()
     ];
 });
