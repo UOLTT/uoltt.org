@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Abstractions\ModeratableModel;
 
-class Commodity extends Model
+class Commodity extends ModeratableModel
 {
 
     protected $fillable = [
