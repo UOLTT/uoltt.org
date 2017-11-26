@@ -42,7 +42,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="#">Commodities <span class="badge">{{ \App\Models\Commodity::RequiresModeration()->count() }}</span></a></li>
                 <li><a href="#">Locations <span class="badge">{{ \App\Models\Location::RequiresModeration()->count() }}</span></a></li>
-                <li><a href="#">Bids <span class="badge">{{ \App\Models\Bid::RequiresModeration()->count() }}</span></a></li>
+                <li><a href="{{ route('admin.moderation.bids.index') }}">Bids <span class="badge">{{ \App\Models\Bid::RequiresModeration()->count() }}</span></a></li>
                 <li><a href="#">Shops <span class="badge">{{ \App\Models\Shop::RequiresModeration()->count() }}</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
