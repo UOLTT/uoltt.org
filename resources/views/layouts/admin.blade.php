@@ -40,10 +40,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">Commodities</a></li>
-                <li><a href="#">Locations</a></li>
+                <li><a href="#">Commodities <span class="badge">{{ \App\Models\Commodity::RequiresModeration()->count() }}</span></a></li>
+                <li><a href="#">Locations <span class="badge">{{ \App\Models\Location::RequiresModeration()->count() }}</span></a></li>
                 <li><a href="#">Bids <span class="badge">{{ \App\Models\Bid::RequiresModeration()->count() }}</span></a></li>
-                <li><a href="#">Shops</a></li>
+                <li><a href="#">Shops <span class="badge">{{ \App\Models\Shop::RequiresModeration()->count() }}</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ route('index') }}">Back To Site</a></li>
