@@ -42,6 +42,9 @@
 
 @push('scripts')
 <script>
-    $('#bidsTable').dataTable();
+    $('#bidsTable').dataTable({
+        /* No ordering applied by DataTables during initialisation */
+        "order": []
+    });
 </script>
 @endpush
