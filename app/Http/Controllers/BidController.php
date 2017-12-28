@@ -19,7 +19,9 @@ class BidController extends Controller
 
     public function index() {
         return view('bids.index',[
-            'Bids' => Bid::with('commodity','shop')->get()
+            'Bids' => Bid::with('commodity','shop')
+                ->orderBy('updated_at', 'desc')
+                ->get()
         ]);
     }
 
