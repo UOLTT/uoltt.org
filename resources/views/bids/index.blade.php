@@ -27,8 +27,8 @@
         @foreach($Bids as $bid)
             <tr>
                 <td>{{ $bid->id }}</td>
-                <td>{{ $bid->commodity->name }}</td>
-                <td>{{ $bid->shop->name }}</td>
+                <td><a href="{{ route('commodities.show', $bid->commodity->id)}}">{{ $bid->commodity->name }}</a></td>
+                <td><a href="{{ route('shops.show', $bid->shop->id) }}">{{ $bid->shop->name }}</a></td>
                 <td>{{ $bid->price }}</td>
                 <td>{{ $bid->quantity }}</td>
                 <td>{{ $bid->created_at->format('m-d-Y g:i a') }}</td>
