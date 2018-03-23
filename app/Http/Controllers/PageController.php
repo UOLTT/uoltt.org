@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 class PageController extends Controller
 {
-
-    public function faq() {
+    public function faq()
+    {
         return view('faq');
     }
 
-    public function index() {
+    public function index()
+    {
         return view('index');
     }
 
-    public function intel() {
+    public function intel()
+    {
         return view('intel');
     }
-
 }

@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bid extends Model
 {
-
     protected $casts = [
-        'price' => 'float'
+        'price' => 'float',
     ];
 
     protected $fillable = [
@@ -16,23 +15,25 @@ class Bid extends Model
         'shop_id',
         'reported_by',
         'price',
-        'quantity'
+        'quantity',
     ];
 
     protected $table = 'bids';
 
     public $timestamps = true;
 
-    public function commodity() {
+    public function commodity()
+    {
         return $this->belongsTo(Commodity::class);
     }
 
-    public function reporter() {
-        return $this->belongsTo(User::class,'reported_by','id');
+    public function reporter()
+    {
+        return $this->belongsTo(User::class, 'reported_by', 'id');
     }
 
-    public function shop() {
+    public function shop()
+    {
         return $this->belongsTo(Shop::class);
     }
-
 }

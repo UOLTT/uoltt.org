@@ -24,11 +24,11 @@ class AffiliationsTableSeeder extends Seeder
             'Crusader Security',
             'Covalex Shipping',
             'Cry-Astro',
-            'Imperial Cartography Center'
+            'Imperial Cartography Center',
         ];
         foreach ($Affiliations as $affiliation) {
             Affiliation::create([
-                'name' => $affiliation
+                'name' => $affiliation,
             ]);
         }
     }

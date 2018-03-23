@@ -17,12 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('status',function() {
+Route::get('status', function () {
     return response()->json([
-        'status' => 'ok'
+        'status' => 'ok',
     ]);
 });
 
-Route::group(['namespace'=>'API'],function() {
-    Route::get('/bids','BidsController@index');
+Route::group(['namespace'=>'API'], function () {
+    Route::get('/bids', 'BidsController@index');
 });

@@ -14,20 +14,20 @@ class PermissionsTableSeeder extends Seeder
     public function run()
     {
         $ManageUserRoles = Permission::create([
-            'name' => 'manage_user_roles',
-            'display_name' => 'Manage User Roles'
+            'name'         => 'manage_user_roles',
+            'display_name' => 'Manage User Roles',
         ]);
         $ManageUsers = Permission::create([
-            'name' => 'manage_users',
-            'display_name' => 'Manage Users'
+            'name'         => 'manage_users',
+            'display_name' => 'Manage Users',
         ]);
         $ManageReports = Permission::create([
-            'name' => 'manage_reports',
-            'display_name' => 'Manage Reports'
+            'name'         => 'manage_reports',
+            'display_name' => 'Manage Reports',
         ]);
         $CreateReports = Permission::create([
-            'name' => 'create_reports',
-            'display_name' => 'Create Reports'
+            'name'         => 'create_reports',
+            'display_name' => 'Create Reports',
         ]);
 
         Role::findByName('admin')
@@ -35,20 +35,19 @@ class PermissionsTableSeeder extends Seeder
                 $ManageUserRoles,
                 $ManageUsers,
                 $ManageReports,
-                $CreateReports
+                $CreateReports,
             ]);
 
         Role::findByName('moderator')
             ->attachPermissions([
                 $ManageUsers,
                 $ManageReports,
-                $CreateReports
+                $CreateReports,
             ]);
 
         Role::findByName('contributor')
             ->attachPermissions([
-                $CreateReports
+                $CreateReports,
             ]);
-
     }
 }

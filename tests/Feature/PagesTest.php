@@ -3,9 +3,6 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class PagesTest extends TestCase
 {
@@ -18,14 +15,14 @@ class PagesTest extends TestCase
     {
         $this->get('/')
             ->assertStatus(200)
-            ->assertSee("Welcome, to the LTT Conglomerate website");
+            ->assertSee('Welcome, to the LTT Conglomerate website');
 
         $this->get('/faq')
             ->assertStatus(200)
-            ->assertSee("Frequently Asked Questions");
+            ->assertSee('Frequently Asked Questions');
 
         $this->get('/intel')
             ->assertStatus(200)
-            ->assertSee("Intelligence System");
+            ->assertSee('Intelligence System');
     }
 }
