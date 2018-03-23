@@ -6,23 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Allegiance extends Model
 {
-
     protected $fillable = ['name'];
 
     protected $table = 'allegiances';
 
     public $timestamps = false;
 
-    public function locations() {
+    public function locations()
+    {
         return $this->hasMany(Location::class);
     }
 
-    public function shops() {
+    public function shops()
+    {
         return $this->hasMany(Shop::class);
     }
 
-    public function systems() {
+    public function systems()
+    {
         return $this->hasMany(System::class);
     }
-
 }

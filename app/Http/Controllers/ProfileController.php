@@ -6,13 +6,12 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-
-    public function update(Request $request) {
-
-        $this->validate($request,[
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'password' => 'string'
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'name'     => 'required|string',
+            'email'    => 'required|email',
+            'password' => 'string',
         ]);
 
         \Auth::user()->name = $request->get('name');
@@ -24,14 +23,13 @@ class ProfileController extends Controller
 
         \Auth::user()->save();
 
-        \Session::flash('message','Your profile information has been updated!');
+        \Session::flash('message', 'Your profile information has been updated!');
 
         return redirect()->to(route('profile.view'));
-
     }
 
-    public function view() {
+    public function view()
+    {
         return view('profile.view');
     }
-
 }

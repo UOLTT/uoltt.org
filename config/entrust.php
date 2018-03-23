@@ -5,7 +5,6 @@
  * a role & permission management solution for Laravel.
  *
  * @license MIT
- * @package Zizaco\Entrust
  */
 
 return [
@@ -96,6 +95,5 @@ return [
     |
     */
     'role_user_table' => 'role_user',
-
 
 ];

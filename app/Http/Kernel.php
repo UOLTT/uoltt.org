@@ -50,14 +50,14 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth'       => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'ability'    => \Zizaco\Entrust\Middleware\EntrustAbility::class,
+        'bindings'   => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'        => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
-        'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'role'       => \Zizaco\Entrust\Middleware\EntrustRole::class,
+        'throttle'   => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

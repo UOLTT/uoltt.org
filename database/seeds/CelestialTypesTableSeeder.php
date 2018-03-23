@@ -12,22 +12,20 @@ class CelestialTypesTableSeeder extends Seeder
      */
     public function run()
     {
-
-        $types =[
-            "Star",
-            "Planet",
-            "Moon",
-            "Dwarf Planet",
-            "Station",
-            "Jump Point",
-            "Asteriod Belt"
+        $types = [
+            'Star',
+            'Planet',
+            'Moon',
+            'Dwarf Planet',
+            'Station',
+            'Jump Point',
+            'Asteriod Belt',
         ];
 
         foreach ($types as $type) {
             CelestialType::create([
-                'name' => $type
+                'name' => $type,
             ]);
         }
-
     }
 }

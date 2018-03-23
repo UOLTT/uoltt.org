@@ -6,19 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Commodity extends Model
 {
-
     protected $fillable = [
         'name',
         'description',
-        'mass'
+        'mass',
     ];
 
     protected $table = 'commodities';
 
     public $timestamps = false;
 
-    public function bids() {
+    public function bids()
+    {
         return $this->hasMany(Bid::class);
     }
-
 }

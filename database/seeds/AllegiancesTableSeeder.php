@@ -18,11 +18,11 @@ class AllegiancesTableSeeder extends Seeder
             'Xian',
             'Banu',
             'Unaffiliated',
-            'Pirate'
+            'Pirate',
         ];
         foreach ($Allegiances as $allegiance) {
             Allegiance::create([
-                'name' => $allegiance
+                'name' => $allegiance,
             ]);
         }
     }

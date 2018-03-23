@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Zizaco\Entrust\EntrustRole;
 
-class Role extends EntrustRole {
-
+class Role extends EntrustRole
+{
     protected $fillable = [
         'name',
         'display_name',
-        'description'
+        'description',
     ];
 
-    public static function findByName($name) {
-        return Role::where('name',$name)->first();
+    public static function findByName($name)
+    {
+        return self::where('name', $name)->first();
     }
-
 }
