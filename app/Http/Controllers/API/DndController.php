@@ -33,6 +33,7 @@ class DndController extends Controller
                 1,
                 (int)$request->get('d')
             );
+            $roll = $roll - (int)$request->get('o', 0);
             $dice[] = $roll > 0 ? $roll : 1;
         }
         return response(implode(' ', $dice));
