@@ -25,4 +25,5 @@ Route::get('status',function() {
 
 Route::group(['namespace'=>'API'],function() {
     Route::get('/bids','BidsController@index');
+    Route::get('/dnd', 'DndController@index');
 });
