@@ -12,11 +12,16 @@
          */
 
         $dice_data = $_GET["roll"];
+        # 2d6+5
 
-        $dice_arr = preg_split("/d|\+/", $dice_data);
+        $dice_arr = preg_split("/d|\+/|\-", $dice_data);
         $num_of_dice = $dice_arr[0];
         $num_of_sides = $dice_arr[1];
         $offset = $dice_arr[2] ?? 0;
+
+        $op = substr($dice_data, strlen($dice_data)-strlen($offset)-1, 1);
+
+        if($op == "-"){ $offset = -1 * $offset; }
 
         $results = [];
         for($i=0; $i<$num_of_dice; $i++){
@@ -26,8 +31,21 @@
                 $results[] = $e->getMessage();
             }
         }
+
+        $out = [];
+        foreach ($results as $throw){
+            $roll = $throw - $offset;
+            $throw = strval($throw);
+            $off = abs($offset);
+            if($throw > $num_of_sides){
+                $out[] = "$throw($roll$op$off)";
+            }
+            else{
+                $out[] = $throw;
+            }
+        }
         ?>
-        <?= implode(" ", $results); ?>
+        <?= implode(" ", $out); ?>
 
     </body>
 </html>
