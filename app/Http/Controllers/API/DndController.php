@@ -22,20 +22,42 @@ class DndController extends Controller
 
     public function index(Request $request)
     {
+        // Validate the query
         $this->validate($request, [
-            'n' => 'required|int', // number of dice
-            'd' => 'required|int', // dice sides
-            'o' => 'int'           // offset
+            'roll' => 'required|regex:/(\d+)d(\d+)([ \-\+]?)(\d*)/'
         ]);
+
+        // Match for 4d20+2, 2d6, 3d4-1, etc
+        preg_match('/(\d+)d(\d+)([ \-\+]?)(\d*)/', $request->get('roll'), $diceData);
+
+        // Break out the dice data into its root elements
+        list($query, $rolls, $sides, $operator, $offset) = $diceData;
+
+        // Setup empty dice array
         $dice = [];
-        for ($n=0; $n < (int)$request->get('n'); $n++) {
-            $roll = random_int(
-                1,
-                (int)$request->get('d')
-            );
-            $roll = $roll - (int)$request->get('o', 0);
-            $dice[] = $roll > 0 ? $roll : 1;
+
+        // For each of the rolls
+        for ($roll = 0; $roll < $rolls; $roll++) {
+
+            // Roll a die
+            $die = random_int(1, $sides);
+
+            // If we have no offset, add to the dice array and continue
+            if (!$operator || !$offset) {
+                $dice[] = $die;
+                continue;
+            }
+
+            // Check if we are adding or subtracting from the dice and do that
+            if ($operator === ' ' || $operator === '+') {
+                $die += $offset;
+            }else {
+                $die = $offset >= $die ? 1 : $die - $offset;
+            }
+
+            $dice[] = $die;
         }
-        return response(implode(' ', $dice));
+
+        return response(implode(', ', $dice));
     }
 }
